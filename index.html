@@ -78,18 +78,30 @@ FELIZ ANIVERSÁRIO MEU AMOR 😽💗
 </div>
 
 <button class="botao-musica" onclick="ativarMusica()">Ativar Música 🎵</button>
-<!-- Player escondido -->
-<div id="player"></div>
+
+<!-- Player visível pequeno -->
+<div id="player-container" style="position:fixed; bottom:80px; right:20px; display:none;">
+    <iframe 
+        id="youtubePlayer"
+        width="200"
+        height="113"
+        frameborder="0"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</div>
 
 <script>
 function ativarMusica() {
     var videoID = "NiK9u6s5leE";
+    var player = document.getElementById("youtubePlayer");
 
-    document.getElementById("player").innerHTML =
-        '<iframe width="0" height="0" src="https://www.youtube.com/embed/' 
-        + videoID +
-        '?autoplay=1&loop=1&playlist=' + videoID +
-        '" frameborder="0" allow="autoplay"></iframe>';
+    player.src = "https://www.youtube.com/embed/" 
+        + videoID 
+        + "?autoplay=1&loop=1&playlist=" 
+        + videoID;
+
+    document.getElementById("player-container").style.display = "block";
 
     document.querySelector(".botao-musica").innerText = "Música Ativada ❤️";
 }
