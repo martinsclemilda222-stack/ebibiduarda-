@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você ❤️</title>
 
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.botao-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 22px;
+    background: #ff2e63;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 0 15px rgba(255, 46, 99, 0.6);
+}
+
+.botao-musica:hover {
+    background: #ff4f81;
+}
+
+p {
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Seu Título Aqui</h1>
+
+    <p>
+  
+</div>
+
+<button class="botao-musica" onclick="ativarMusica()">Ativar Música 🎵</button>
+
+<!-- Player escondido -->
+<div id="player" style="display:none;">
+    <iframe 
+        id="youtubePlayer"
+        width="0"
+        height="0"
+        src=""
+        frameborder="0"
+        allow="autoplay">
+    </iframe>
+</div>
+
+<script>
+function ativarMusica() {
+    var videoID = "NiK9u6s5leE";
+    var player = document.getElementById("youtubePlayer");
+
+    player.src = "https://www.youtube.com/embed/" 
+        + videoID 
+        + "?autoplay=1&loop=1&playlist=" 
+        + videoID;
+
+    document.querySelector(".botao-musica").innerText = "Música Ativada ❤️";
+}
+</script>
+
+</body>
+</html>
