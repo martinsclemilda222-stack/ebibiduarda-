@@ -77,27 +77,7 @@ Te amo demais, mais do que este mundo pode entender. E quero que nunca esqueça:
 FELIZ ANIVERSÁRIO MEU AMOR 😽💗
         
 </div>
-    <button class="botao-musica" onclick="ativarMusica(this)">
-    Ativar Música 🎵
-</button>
-
-<script>
-let audio;
-
-function ativarMusica(botao) {
-
-    if (!audio) {
-        audio = new Audio("musica.mp3");
-        audio.loop = true;
-        audio.volume = 100.0;
-    }
-
-    if (audio.paused) {
-        audio.play();
-        botao.innerText = "Pausar Música ⏸️";
-    } else {
-        audio.pause();
-        botao.innerText = "Ativar Música 🎵";
+    
     }
 }
 </script>
